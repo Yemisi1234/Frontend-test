@@ -13,7 +13,6 @@ import "./App.css";
 
 export default function App({itemsPerPage}) {
  const [data, setData] = useState([]);
- const [error, setError] = useState({});
  const [loading, setLoading] = useState(false)
  const [currentPage, setCurrentPage] = useState(1);
  const [postsPerPage] = useState(6);
@@ -29,7 +28,8 @@ export default function App({itemsPerPage}) {
   };
 
   fetchPosts();
-}, []);
+  // eslint-disable-next-line 
+},[]);
  
   
   const indexOfLastPost = currentPage * postsPerPage;
